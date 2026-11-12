@@ -9,6 +9,9 @@
     "url": "https://nnda.dev/",
     "email": "talk@nnda.dev"
   },
+  "keywords": [
+    "badges"
+  ],
   "funding": {
     "type": "patreon",
     "url": "https://www.patreon.com/nnda"
