@@ -20,8 +20,8 @@ if (process.argv.includes("--build")) {
         bgColor: "#f6f6f6",
         textColor: {
           made: "#0c0c09",
-          withLove: "#fc3a78",
-          byHuman: "#d48908",
+          withLove: "#a60638",
+          byHuman: "#724c0a",
         },
       },
 
@@ -29,7 +29,7 @@ if (process.argv.includes("--build")) {
         bgColor: "#0c0c09",
         textColor: {
           made: "#eaeaea",
-          withLove: "#fc3a78",
+          withLove: "#ff6797",
           byHuman: "#f5cf0e",
         },
       },
