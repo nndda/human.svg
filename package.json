@@ -1,0 +1,36 @@
+{
+  "name": "@nnda/human.svg",
+  "description": "Made with ♥︎, by human",
+  "version": "1.0.0",
+  "homepage": "https://github.com/nndda/human.svg#readme",
+  "license": "CC0-1.0",
+  "author": {
+    "name": "nnda",
+    "url": "https://nnda.dev/",
+    "email": "talk@nnda.dev"
+  },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/nnda"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nndda/human.svg.git"
+  },
+  "files": [
+    "./dist/*"
+  ],
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun --bun run ./index.ts --build",
+    "typecheck": "bun check"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "svgo": "^4.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}
