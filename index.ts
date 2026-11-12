@@ -13,8 +13,7 @@ interface BadgeVariant {
 if (process.argv.includes("--build")) {
 
   const
-    svgBaseStr = fs.readFileSync("./svg/base.svg", { encoding: "utf8" })
-  , variants: Record<string, BadgeVariant> = {
+    variants: Record<string, BadgeVariant> = {
 
       light: {
         bgColor: "#f6f6f6",
@@ -40,20 +39,28 @@ if (process.argv.includes("--build")) {
     }
   ;
 
-  for (const variant in variants) {
-    const
-      data = variants[variant]!
-    , svgVariant = svgBaseStr
-        // lord forgive me
-        .replaceAll("{bgColor}", data.bgColor)
-        .replaceAll("{textColor_made}", data.textColor.made)
-        .replaceAll("{textColor_withLove}", data.textColor.withLove)
-        .replaceAll("{textColor_byHuman}", data.textColor.byHuman)
-    ;
+  for (const base of [
+    "base",
+    "base.81x33",
+  ]) {
+    const svgBaseStr = fs.readFileSync("./svg/" + base + ".svg", { encoding: "utf8" });
 
-    fs.writeFileSync(
-      "./dist/" + variant + ".svg",
-      optimize(svgVariant, svgoConf).data,
-    );
+    for (const variant in variants) {
+      const
+        data = variants[variant]!
+      , pref = base.split(".")[1]
+      , svgVariant = svgBaseStr
+          // lord forgive me
+          .replaceAll("{bgColor}", data.bgColor)
+          .replaceAll("{textColor_made}", data.textColor.made)
+          .replaceAll("{textColor_withLove}", data.textColor.withLove)
+          .replaceAll("{textColor_byHuman}", data.textColor.byHuman)
+      ;
+
+      fs.writeFileSync(
+        "./dist/" + (pref ? pref + "." : "") + variant + ".svg",
+        optimize(svgVariant, svgoConf).data,
+      );
+    }
   }
 }

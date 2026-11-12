@@ -1,0 +1,64 @@
+<!--
+    Copyright 2026 nnda <talk@nnda.dev>
+
+    SPDX-License-Identifier: CC0-1.0
+-->
+<svg
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 88 31"
+  height="31"
+  width="88"
+>
+  <style>
+    text {
+      font: 12px monospace;
+    }
+
+    #withLoveByHuman {
+      font: bold 12px monospace;
+    }
+  </style>
+
+  <defs>
+    <clipPath id="clipRect">
+      <rect
+        y="12"
+        width="100%"
+        height="18"
+      />
+    </clipPath>
+  </defs>
+
+  <rect
+    rx="2"
+    width="100%"
+    height="100%"
+    fill="{bgColor}"
+  />
+
+  <text x="1.5ch" y="12" fill="{textColor_made}">Made</text>
+
+  <text x="1.5ch" id="withLoveByHuman" clip-path="url(#clipRect)"><!--
+
+    --><tspan fill="{textColor_withLove}" x="1.5ch" dy="10">with ♥</tspan><!--
+
+    --><tspan fill="{textColor_byHuman}" x="1.5ch" dy="14">by human</tspan><!--
+
+    --><!-- NOTE: '22' cuz need to compensate/adjust for the 'y' letter's "tail" --><!--
+
+    --><animate
+      attributeName="y"
+      dur="3.5s"
+      values="0; 0; 16; 16; 0"
+      keyTimes="0; 0.4; 0.5; 0.9; 1"
+      repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="
+        0.33 1 0.68 1;
+        0.33 1 0.68 1;
+        0.33 1 0.68 1;
+        0.33 1 0.68 1"
+    /><!--
+  --></text>
+</svg>
