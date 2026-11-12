@@ -1,4 +1,4 @@
-# Made with ♥︎, by human.
+# Made with ♥︎, by human
 
 SVG badges for works and arts made with ♥︎ by human.
 
