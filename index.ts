@@ -41,7 +41,7 @@ if (process.argv.includes("--build")) {
 
   for (const base of [
     "base",
-    "base.81x33",
+    "base.88x31",
   ]) {
     const svgBaseStr = fs.readFileSync("./svg/" + base + ".svg", { encoding: "utf8" });
 
